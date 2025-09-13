@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css"/>
+    <title>Puzzle Goku</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Puzzle Goku</h2>
+        <p>Dale clic a la imagen que usted desea mover</p>
+        <div class="game-container">
+            <div class="main-image">
+                <img id="mainImage" src="image/images.jpg" alt="Imagen principal">
+            </div>
+            <div class="puzzle-container">
+                <div id="puzzle" class="puzzle"></div>
+                <div id="timer">Tiempo restante: <span id="countdown">60</span>s</div>
+            </div>
+        </div>
+        <p id="mensaje"></p>
+        <button onclick="reiniciar()" class="btn">Reiniciar puzzle</button>
+    </div>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h3 id="modal-title"></h3>
+            <button onclick="reiniciar()" class="btn">Reiniciar</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: radial-gradient(circle at center, #1b1e25, #0d1117);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    color: #000000;
+}
+
+.container {
+    background: linear-gradient(135deg, #a6c8ff 0%, #dbe9ff 50%, #ffffff 100%);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow:
+        0 0 15px 3px #63a4ff,
+        0 0 30px 6px #a6c8ff,
+        inset 0 0 15px 2px #e8f1ff;
+    text-align: center;
+    max-width: 850px;
+    width: 100%;
+    backdrop-filter: blur(15px);
+    border: 2px solid #81a7ff;
+    color: #000000; 
+}
+
+.game-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 35px;
+    margin-bottom: 25px;
+}
+
+.main-image img {
+    width: 320px;
+    height: 320px;
+    border: 4px solid #9fc9ff;
+    border-radius: 15px;
+    box-shadow:
+        0 0 20px 5px #a0b9ff,
+        0 0 40px 10px #d1e4ff;
+    object-fit: cover;
+    filter: drop-shadow(0 0 15px #b1d2ff);
+    transition: transform 0.4s ease;
+}
+
+.main-image img:hover {
+    transform: scale(1.05) rotate(2deg);
+}
+
+.puzzle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.puzzle {
+    display: grid;
+    grid-template-columns: repeat(4, 80px);
+    grid-template-rows: repeat(4, 80px);
+    gap: 8px;
+    margin: 25px auto;
+    padding: 8px;
+    background: rgba(30, 34, 41, 0.7);
+    border-radius: 20px;
+    box-shadow:
+        0 0 15px 3px #5988ff inset;
+}
+
+.celda {
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow:
+        0 2px 8px rgba(88, 136, 255, 0.5),
+        inset 0 0 6px 1px #a3c2ff;
+    position: relative;
+    border: 2px solid #a3c2ff;
+    background-blend-mode: screen;
+    filter: drop-shadow(0 0 6px #8abaff);
+    color: #000000; 
+}
+
+.celda:nth-child(odd) {
+    background-color: rgba(150, 190, 255, 0.1);
+}
+
+.celda:hover {
+    opacity: 1;
+    box-shadow:
+        0 0 20px 6px #89b6ff,
+        inset 0 0 10px 3px #d1e4ff;
+    transform: translateY(-3px) scale(1.05);
+    filter: drop-shadow(0 0 12px #99bbff);
+}
+
+.vacio {
+    background: #222831;
+    cursor: default;
+    border: 2px dashed #576574;
+    box-shadow: none;
+    filter: none;
+}
+
+#timer {
+    font-size: 20px;
+    margin-top: 20px;
+    color: #000000;
+    font-weight: 700;
+    background: rgba(55, 72, 121, 0.7);
+    padding: 10px 20px;
+    border-radius: 30px;
+    box-shadow:
+        0 0 12px 3px #7d99ff;
+    letter-spacing: 1.2px;
+}
+
+.btn {
+    padding: 14px 28px;
+    font-size: 18px;
+    background: linear-gradient(45deg, #6286ff, #a1c0ff);
+    color: #000000; 
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    box-shadow:
+        0 0 10px 0 #8ab6ff,
+        inset 0 0 8px 0 #a9d1ff;
+}
+
+.btn:hover {
+    background: linear-gradient(45deg, #8aa6ff, #c1e0ff);
+    transform: scale(1.08);
+    box-shadow:
+        0 0 18px 5px #9fc2ff,
+        inset 0 0 12px 3px #d0e8ff;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(12, 20, 45, 0.85);
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+}
+
+.modal-content {
+    background: #15203c;
+    padding: 35px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(50, 74, 139, 0.8);
+    width: 90%;
+    max-width: 450px;
+    animation: fadeIn 0.3s ease-in;
+    color: #000000; 
+}
+
+.modal-content h3 {
+    margin: 0 0 25px;
+    font-size: 28px;
+    font-weight: 800;
+    color: #000000; 
+    text-shadow: none;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
